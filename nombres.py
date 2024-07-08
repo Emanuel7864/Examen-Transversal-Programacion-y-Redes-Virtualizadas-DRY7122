@@ -1,0 +1,1 @@
+print("los integrantes de este grupo son: Lukas Contreras y Emanuel linco")
