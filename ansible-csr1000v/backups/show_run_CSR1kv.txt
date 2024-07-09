@@ -1,0 +1,198 @@
+Building configuration...
+
+Current configuration : 4296 bytes
+!
+! Last configuration change at 18:50:54 UTC Tue Jul 9 2024 by cisco
+!
+version 16.9
+service timestamps debug datetime msec
+service timestamps log datetime msec
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+platform console virtual
+!
+hostname Contreras_Linco
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+ip domain name etw.netacad.com
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-3734908042
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3734908042
+ revocation-check none
+ rsakeypair TP-self-signed-3734908042
+!
+!
+crypto pki certificate chain TP-self-signed-3734908042
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 33373334 39303830 3432301E 170D3234 30373039 31353535 
+  35395A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 37333439 
+  30383034 32308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 0100CCE1 06A40906 24581754 BB0B93EC 747EBCEF F3B54BDC 15B588FE 
+  8E2FC3B9 2A2A4395 88E33E23 98F3200C A97D4840 A370DBFA E6AA1CD6 1F676504 
+  41488BDE 836059B4 AAF65F19 6EF21385 57CB46CB 94DD3820 771CC216 3B99F3E8 
+  7B34D809 69228B5A DDA73C70 A077B257 D56EA213 EC60C9FA C8FA9516 BF629771 
+  CDAA856B 6CB3E522 12D38129 35BEE667 D166DC22 45A9C607 36F4F6F1 7ED044EC 
+  FC32C79B 52EDD8B0 D040909A 4371E7E4 F7F42FEE 864DB256 8A13B31F EA4536E6 
+  160D7489 B390B5DC 6C641CAD 0B61CD98 1D57A2EE A7A727D5 9D2E4BBE 5384252B 
+  D5282C2B F0D1698C 288D6BA2 47B5843B 9FBB13B0 A70B5137 883B92D5 0332AA8F 
+  AAF5C02E 4C470203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 
+  301F0603 551D2304 18301680 14A7C770 3E7E542B DA732616 A1470AEC 36EE5221 
+  7F301D06 03551D0E 04160414 A7C7703E 7E542BDA 732616A1 470AEC36 EE52217F 
+  300D0609 2A864886 F70D0101 05050003 82010100 05293878 F55D7B8F 17923D49 
+  9C6BE889 E51ABCE0 B14DE3C0 83DA98F1 8361CC11 B0C9F8D2 29CE9F2A E1FC0890 
+  132893E8 94F64FC0 98D02FDB 5700E646 F83E5775 E4A00C66 5545632C 589C6C46 
+  31E98DC0 CF9FDF27 7C11CBB7 C277921A AF0CC0EF E357F21F F9CC766C 7AF81F61 
+  AB7AF601 5E4AAB5B 0F484F08 333AB87E 11DEE7BE D6E95724 071E17C5 4FCF6CC8 
+  DB5BFB50 9C62ABCE F8D42C85 A1D58B77 336835CE B11323E6 6640398F 21D3F4BC 
+  483B2D9D 0E26081C 9DA47AC4 6EF22B55 7E61AEC4 994ABE85 2D9E1E32 BA06BD50 
+  3CCE9E62 0D457462 51ACE4AC F27DA78A 97E5701E 67E412EE 85C8D68F CFA018E9 
+  865E7678 AD1D2786 67FEB388 C9615368 57A163A8
+  	quit
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 98JO7SFBWL7
+no license smart enable
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+netconf-yang
+!
+restconf
+!
+username cisco privilege 15 password 0 cisco123!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface Loopback22
+ description interfaz creada para el item 5
+ ip address 22.22.22.22 255.255.255.255
+ shutdown
+!
+interface Loopback33
+ description interfaz creada para item 6
+ no ip address
+ ipv6 address FE80::1 link-local
+ ipv6 address 3001:ABCD:ABCD:1::1/128
+!
+interface GigabitEthernet1
+ description VBox
+ ip address dhcp
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+ip forward-protocol nd
+no ip http server
+ip http authentication local
+ip http secure-server
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+banner motd ^C
+*                                           *
+**                                         **
+***                                       ***
+***  Cisco Networking Academy             ***
+***   Emerging Technologies Workshop:     ***
+***    Model Driven Programmability       ***
+***                                       ***
+***  This software is provided for        ***
+***   Educational Purposes                ***
+***    Only in Networking Academies       ***
+***                                       ***
+**                                         **
+*                                           *
+^C
+!
+line con 0
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+!
+!
+!
+!
+!
+end
